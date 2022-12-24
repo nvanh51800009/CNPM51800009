@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="70f8a40fded14078b86e1b10cab5f258" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="QLSVModel.GIAOVIEN" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLSVModel.KETQUA" Width="1.5" PointX="5.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLSVModel.KHOA" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLSVModel.KHOAHOC" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLSVModel.MONHOC" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLSVModel.SINHVIEN" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLSVModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="QLSVModel.FK__GIAOVIEN__MAKHOA__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="QLSVModel.FK__KHOAHOC__MAGV__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="QLSVModel.FK__KETQUA__MAMH__2C3393D0" ManuallyRouted="false" />
+        <AssociationConnector Association="QLSVModel.FK__KETQUA__MASV__2B3F6F97" ManuallyRouted="false" />
+        <AssociationConnector Association="QLSVModel.FK__SINHVIEN__MAKHOA__267ABA7A" ManuallyRouted="false" />
+        <AssociationConnector Association="QLSVModel.FK__KHOAHOC__MAMH__32E0915F" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
