@@ -1,0 +1,293 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3E0E3383-3640-4C1B-8C97-01B7CD5064CF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DXApplicationQLSV</RootNamespace>
+    <AssemblyName>DXApplicationQLSV</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v21.2" />
+    <Reference Include="DevExpress.Charts.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.Desktop.v21.2" />
+    <Reference Include="DevExpress.Data.v21.2" />
+    <Reference Include="DevExpress.DataAccess.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v21.2.Export, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v21.2" />
+    <Reference Include="DevExpress.Sparkline.v21.2.Core" />
+    <Reference Include="DevExpress.Utils.v21.2.UI, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v21.2" />
+    <Reference Include="DevExpress.Printing.v21.2.Core" />
+    <Reference Include="DevExpress.XtraGauges.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v21.2.Extensions, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DXgv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DXgv.Designer.cs">
+      <DependentUpon>DXgv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DXkh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DXkh.Designer.cs">
+      <DependentUpon>DXkh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DXkhoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DXkhoa.Designer.cs">
+      <DependentUpon>DXkhoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DXkq.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DXkq.Designer.cs">
+      <DependentUpon>DXkq.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DXmain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DXmain.Designer.cs">
+      <DependentUpon>DXmain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DXmh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DXmh.Designer.cs">
+      <DependentUpon>DXmh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DXsinhvien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DXsinhvien.Designer.cs">
+      <DependentUpon>DXsinhvien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GIAOVIEN.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KETQUA.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KHOA.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KHOAHOC.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="MONHOC.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SINHVIEN.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportgv.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportgv.Designer.cs">
+      <DependentUpon>XtraReportgv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportkh.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportkh.Designer.cs">
+      <DependentUpon>XtraReportkh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportkhoa.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportkhoa.Designer.cs">
+      <DependentUpon>XtraReportkhoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportkq.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportkq.Designer.cs">
+      <DependentUpon>XtraReportkq.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportmh.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportmh.Designer.cs">
+      <DependentUpon>XtraReportmh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportsv.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportsv.Designer.cs">
+      <DependentUpon>XtraReportsv.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DXgv.resx">
+      <DependentUpon>DXgv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DXkh.resx">
+      <DependentUpon>DXkh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DXkhoa.resx">
+      <DependentUpon>DXkhoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DXkq.resx">
+      <DependentUpon>DXkq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DXmain.resx">
+      <DependentUpon>DXmain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DXmh.resx">
+      <DependentUpon>DXmh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DXsinhvien.resx">
+      <DependentUpon>DXsinhvien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="XtraReportgv.resx">
+      <DependentUpon>XtraReportgv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportkh.resx">
+      <DependentUpon>XtraReportkh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportkhoa.resx">
+      <DependentUpon>XtraReportkhoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportkq.resx">
+      <DependentUpon>XtraReportkq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportmh.resx">
+      <DependentUpon>XtraReportmh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportsv.resx">
+      <DependentUpon>XtraReportsv.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\DXsinhvien.datasource" />
+    <None Include="Properties\DataSources\GIAOVIEN.datasource" />
+    <None Include="Properties\DataSources\KETQUA.datasource" />
+    <None Include="Properties\DataSources\KHOA.datasource" />
+    <None Include="Properties\DataSources\KHOAHOC.datasource" />
+    <None Include="Properties\DataSources\MONHOC.datasource" />
+    <None Include="Properties\DataSources\SINHVIEN.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

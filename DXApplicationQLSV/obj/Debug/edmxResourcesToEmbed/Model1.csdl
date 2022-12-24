@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLSVModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="GIAOVIEN">
+    <Key>
+      <PropertyRef Name="MAGV" />
+    </Key>
+    <Property Name="MAGV" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="TENGV" Type="String" MaxLength="90" FixedLength="false" Unicode="true" />
+    <Property Name="HOCVI" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="SDT" Type="Int32" />
+    <Property Name="MAKHOA" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="KHOA" Relationship="Self.FK__GIAOVIEN__MAKHOA__2F10007B" FromRole="GIAOVIEN" ToRole="KHOA" />
+    <NavigationProperty Name="KHOAHOC" Relationship="Self.FK__KHOAHOC__MAGV__31EC6D26" FromRole="GIAOVIEN" ToRole="KHOAHOC" />
+  </EntityType>
+  <EntityType Name="KETQUA">
+    <Key>
+      <PropertyRef Name="MASV" />
+      <PropertyRef Name="MAMH" />
+      <PropertyRef Name="LANTHI" />
+    </Key>
+    <Property Name="MASV" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MAMH" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="LANTHI" Type="Int32" Nullable="false" />
+    <Property Name="DIEM" Type="Int32" />
+    <NavigationProperty Name="MONHOC" Relationship="Self.FK__KETQUA__MAMH__2C3393D0" FromRole="KETQUA" ToRole="MONHOC" />
+    <NavigationProperty Name="SINHVIEN" Relationship="Self.FK__KETQUA__MASV__2B3F6F97" FromRole="KETQUA" ToRole="SINHVIEN" />
+  </EntityType>
+  <EntityType Name="KHOA">
+    <Key>
+      <PropertyRef Name="MAKHOA" />
+    </Key>
+    <Property Name="MAKHOA" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="TENKHOA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DIACHI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DIENTHOAI" Type="Int32" />
+    <NavigationProperty Name="GIAOVIEN" Relationship="Self.FK__GIAOVIEN__MAKHOA__2F10007B" FromRole="KHOA" ToRole="GIAOVIEN" />
+    <NavigationProperty Name="SINHVIEN" Relationship="Self.FK__SINHVIEN__MAKHOA__267ABA7A" FromRole="KHOA" ToRole="SINHVIEN" />
+  </EntityType>
+  <EntityType Name="KHOAHOC">
+    <Key>
+      <PropertyRef Name="MAKH" />
+    </Key>
+    <Property Name="MAKH" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MAGV" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="MAMH" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Name="NGAYBD" Type="DateTime" Precision="3" />
+    <Property Name="NGAYKY" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="GIAOVIEN" Relationship="Self.FK__KHOAHOC__MAGV__31EC6D26" FromRole="KHOAHOC" ToRole="GIAOVIEN" />
+    <NavigationProperty Name="MONHOC" Relationship="Self.FK__KHOAHOC__MAMH__32E0915F" FromRole="KHOAHOC" ToRole="MONHOC" />
+  </EntityType>
+  <EntityType Name="MONHOC">
+    <Key>
+      <PropertyRef Name="MAMH" />
+    </Key>
+    <Property Name="TENMH" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="MAMH" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="SOTIETLT" Type="Int32" />
+    <Property Name="SOTIETTH" Type="Int32" />
+    <NavigationProperty Name="KETQUA" Relationship="Self.FK__KETQUA__MAMH__2C3393D0" FromRole="MONHOC" ToRole="KETQUA" />
+    <NavigationProperty Name="KHOAHOC" Relationship="Self.FK__KHOAHOC__MAMH__32E0915F" FromRole="MONHOC" ToRole="KHOAHOC" />
+  </EntityType>
+  <EntityType Name="SINHVIEN">
+    <Key>
+      <PropertyRef Name="MASV" />
+    </Key>
+    <Property Name="TENSV" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="MASV" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="NGAYSINH" Type="DateTime" Precision="3" />
+    <Property Name="PHAI" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="MAKHOA" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Name="DIACHI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DIENTHOAI" Type="Int32" />
+    <NavigationProperty Name="KETQUA" Relationship="Self.FK__KETQUA__MASV__2B3F6F97" FromRole="SINHVIEN" ToRole="KETQUA" />
+    <NavigationProperty Name="KHOA" Relationship="Self.FK__SINHVIEN__MAKHOA__267ABA7A" FromRole="SINHVIEN" ToRole="KHOA" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK__GIAOVIEN__MAKHOA__2F10007B">
+    <End Role="KHOA" Type="Self.KHOA" Multiplicity="0..1" />
+    <End Role="GIAOVIEN" Type="Self.GIAOVIEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHOA">
+        <PropertyRef Name="MAKHOA" />
+      </Principal>
+      <Dependent Role="GIAOVIEN">
+        <PropertyRef Name="MAKHOA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__KHOAHOC__MAGV__31EC6D26">
+    <End Role="GIAOVIEN" Type="Self.GIAOVIEN" Multiplicity="0..1" />
+    <End Role="KHOAHOC" Type="Self.KHOAHOC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GIAOVIEN">
+        <PropertyRef Name="MAGV" />
+      </Principal>
+      <Dependent Role="KHOAHOC">
+        <PropertyRef Name="MAGV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__KETQUA__MAMH__2C3393D0">
+    <End Role="MONHOC" Type="Self.MONHOC" Multiplicity="1" />
+    <End Role="KETQUA" Type="Self.KETQUA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MONHOC">
+        <PropertyRef Name="MAMH" />
+      </Principal>
+      <Dependent Role="KETQUA">
+        <PropertyRef Name="MAMH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__KETQUA__MASV__2B3F6F97">
+    <End Role="SINHVIEN" Type="Self.SINHVIEN" Multiplicity="1" />
+    <End Role="KETQUA" Type="Self.KETQUA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SINHVIEN">
+        <PropertyRef Name="MASV" />
+      </Principal>
+      <Dependent Role="KETQUA">
+        <PropertyRef Name="MASV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SINHVIEN__MAKHOA__267ABA7A">
+    <End Role="KHOA" Type="Self.KHOA" Multiplicity="0..1" />
+    <End Role="SINHVIEN" Type="Self.SINHVIEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHOA">
+        <PropertyRef Name="MAKHOA" />
+      </Principal>
+      <Dependent Role="SINHVIEN">
+        <PropertyRef Name="MAKHOA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__KHOAHOC__MAMH__32E0915F">
+    <End Role="MONHOC" Type="Self.MONHOC" Multiplicity="0..1" />
+    <End Role="KHOAHOC" Type="Self.KHOAHOC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MONHOC">
+        <PropertyRef Name="MAMH" />
+      </Principal>
+      <Dependent Role="KHOAHOC">
+        <PropertyRef Name="MAMH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QLSVEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="GIAOVIEN" EntityType="Self.GIAOVIEN" />
+    <EntitySet Name="KETQUA" EntityType="Self.KETQUA" />
+    <EntitySet Name="KHOA" EntityType="Self.KHOA" />
+    <EntitySet Name="KHOAHOC" EntityType="Self.KHOAHOC" />
+    <EntitySet Name="MONHOC" EntityType="Self.MONHOC" />
+    <EntitySet Name="SINHVIEN" EntityType="Self.SINHVIEN" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <AssociationSet Name="FK__GIAOVIEN__MAKHOA__2F10007B" Association="Self.FK__GIAOVIEN__MAKHOA__2F10007B">
+      <End Role="KHOA" EntitySet="KHOA" />
+      <End Role="GIAOVIEN" EntitySet="GIAOVIEN" />
+    </AssociationSet>
+    <AssociationSet Name="FK__KHOAHOC__MAGV__31EC6D26" Association="Self.FK__KHOAHOC__MAGV__31EC6D26">
+      <End Role="GIAOVIEN" EntitySet="GIAOVIEN" />
+      <End Role="KHOAHOC" EntitySet="KHOAHOC" />
+    </AssociationSet>
+    <AssociationSet Name="FK__KETQUA__MAMH__2C3393D0" Association="Self.FK__KETQUA__MAMH__2C3393D0">
+      <End Role="MONHOC" EntitySet="MONHOC" />
+      <End Role="KETQUA" EntitySet="KETQUA" />
+    </AssociationSet>
+    <AssociationSet Name="FK__KETQUA__MASV__2B3F6F97" Association="Self.FK__KETQUA__MASV__2B3F6F97">
+      <End Role="SINHVIEN" EntitySet="SINHVIEN" />
+      <End Role="KETQUA" EntitySet="KETQUA" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SINHVIEN__MAKHOA__267ABA7A" Association="Self.FK__SINHVIEN__MAKHOA__267ABA7A">
+      <End Role="KHOA" EntitySet="KHOA" />
+      <End Role="SINHVIEN" EntitySet="SINHVIEN" />
+    </AssociationSet>
+    <AssociationSet Name="FK__KHOAHOC__MAMH__32E0915F" Association="Self.FK__KHOAHOC__MAMH__32E0915F">
+      <End Role="MONHOC" EntitySet="MONHOC" />
+      <End Role="KHOAHOC" EntitySet="KHOAHOC" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

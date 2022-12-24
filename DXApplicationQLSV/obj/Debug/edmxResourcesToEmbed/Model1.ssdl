@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLSVModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="GIAOVIEN">
+    <Key>
+      <PropertyRef Name="MAGV" />
+    </Key>
+    <Property Name="MAGV" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="TENGV" Type="nvarchar" MaxLength="90" />
+    <Property Name="HOCVI" Type="nvarchar" MaxLength="40" />
+    <Property Name="SDT" Type="int" />
+    <Property Name="MAKHOA" Type="char" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="KETQUA">
+    <Key>
+      <PropertyRef Name="MASV" />
+      <PropertyRef Name="MAMH" />
+      <PropertyRef Name="LANTHI" />
+    </Key>
+    <Property Name="MASV" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="MAMH" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="LANTHI" Type="int" Nullable="false" />
+    <Property Name="DIEM" Type="int" />
+  </EntityType>
+  <EntityType Name="KHOA">
+    <Key>
+      <PropertyRef Name="MAKHOA" />
+    </Key>
+    <Property Name="MAKHOA" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="TENKHOA" Type="nvarchar" MaxLength="50" />
+    <Property Name="DIACHI" Type="nvarchar" MaxLength="50" />
+    <Property Name="DIENTHOAI" Type="int" />
+  </EntityType>
+  <EntityType Name="KHOAHOC">
+    <Key>
+      <PropertyRef Name="MAKH" />
+    </Key>
+    <Property Name="MAKH" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="MAGV" Type="char" MaxLength="10" />
+    <Property Name="MAMH" Type="char" MaxLength="5" />
+    <Property Name="NGAYBD" Type="datetime" />
+    <Property Name="NGAYKY" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MONHOC">
+    <Key>
+      <PropertyRef Name="MAMH" />
+    </Key>
+    <Property Name="TENMH" Type="varchar" MaxLength="30" />
+    <Property Name="MAMH" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="SOTIETLT" Type="int" />
+    <Property Name="SOTIETTH" Type="int" />
+  </EntityType>
+  <EntityType Name="SINHVIEN">
+    <Key>
+      <PropertyRef Name="MASV" />
+    </Key>
+    <Property Name="TENSV" Type="nvarchar" MaxLength="30" />
+    <Property Name="MASV" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="NGAYSINH" Type="datetime" />
+    <Property Name="PHAI" Type="nvarchar" MaxLength="5" />
+    <Property Name="MAKHOA" Type="char" MaxLength="5" />
+    <Property Name="DIACHI" Type="nvarchar" MaxLength="50" />
+    <Property Name="DIENTHOAI" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK__GIAOVIEN__MAKHOA__2F10007B">
+    <End Role="KHOA" Type="Self.KHOA" Multiplicity="0..1" />
+    <End Role="GIAOVIEN" Type="Self.GIAOVIEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHOA">
+        <PropertyRef Name="MAKHOA" />
+      </Principal>
+      <Dependent Role="GIAOVIEN">
+        <PropertyRef Name="MAKHOA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__KETQUA__MAMH__2C3393D0">
+    <End Role="MONHOC" Type="Self.MONHOC" Multiplicity="1" />
+    <End Role="KETQUA" Type="Self.KETQUA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MONHOC">
+        <PropertyRef Name="MAMH" />
+      </Principal>
+      <Dependent Role="KETQUA">
+        <PropertyRef Name="MAMH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__KETQUA__MASV__2B3F6F97">
+    <End Role="SINHVIEN" Type="Self.SINHVIEN" Multiplicity="1" />
+    <End Role="KETQUA" Type="Self.KETQUA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SINHVIEN">
+        <PropertyRef Name="MASV" />
+      </Principal>
+      <Dependent Role="KETQUA">
+        <PropertyRef Name="MASV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__KHOAHOC__MAGV__31EC6D26">
+    <End Role="GIAOVIEN" Type="Self.GIAOVIEN" Multiplicity="0..1" />
+    <End Role="KHOAHOC" Type="Self.KHOAHOC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GIAOVIEN">
+        <PropertyRef Name="MAGV" />
+      </Principal>
+      <Dependent Role="KHOAHOC">
+        <PropertyRef Name="MAGV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__KHOAHOC__MAMH__32E0915F">
+    <End Role="MONHOC" Type="Self.MONHOC" Multiplicity="0..1" />
+    <End Role="KHOAHOC" Type="Self.KHOAHOC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MONHOC">
+        <PropertyRef Name="MAMH" />
+      </Principal>
+      <Dependent Role="KHOAHOC">
+        <PropertyRef Name="MAMH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SINHVIEN__MAKHOA__267ABA7A">
+    <End Role="KHOA" Type="Self.KHOA" Multiplicity="0..1" />
+    <End Role="SINHVIEN" Type="Self.SINHVIEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHOA">
+        <PropertyRef Name="MAKHOA" />
+      </Principal>
+      <Dependent Role="SINHVIEN">
+        <PropertyRef Name="MAKHOA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QLSVModelStoreContainer">
+    <EntitySet Name="GIAOVIEN" EntityType="Self.GIAOVIEN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KETQUA" EntityType="Self.KETQUA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KHOA" EntityType="Self.KHOA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KHOAHOC" EntityType="Self.KHOAHOC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MONHOC" EntityType="Self.MONHOC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SINHVIEN" EntityType="Self.SINHVIEN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__GIAOVIEN__MAKHOA__2F10007B" Association="Self.FK__GIAOVIEN__MAKHOA__2F10007B">
+      <End Role="KHOA" EntitySet="KHOA" />
+      <End Role="GIAOVIEN" EntitySet="GIAOVIEN" />
+    </AssociationSet>
+    <AssociationSet Name="FK__KETQUA__MAMH__2C3393D0" Association="Self.FK__KETQUA__MAMH__2C3393D0">
+      <End Role="MONHOC" EntitySet="MONHOC" />
+      <End Role="KETQUA" EntitySet="KETQUA" />
+    </AssociationSet>
+    <AssociationSet Name="FK__KETQUA__MASV__2B3F6F97" Association="Self.FK__KETQUA__MASV__2B3F6F97">
+      <End Role="SINHVIEN" EntitySet="SINHVIEN" />
+      <End Role="KETQUA" EntitySet="KETQUA" />
+    </AssociationSet>
+    <AssociationSet Name="FK__KHOAHOC__MAGV__31EC6D26" Association="Self.FK__KHOAHOC__MAGV__31EC6D26">
+      <End Role="GIAOVIEN" EntitySet="GIAOVIEN" />
+      <End Role="KHOAHOC" EntitySet="KHOAHOC" />
+    </AssociationSet>
+    <AssociationSet Name="FK__KHOAHOC__MAMH__32E0915F" Association="Self.FK__KHOAHOC__MAMH__32E0915F">
+      <End Role="MONHOC" EntitySet="MONHOC" />
+      <End Role="KHOAHOC" EntitySet="KHOAHOC" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SINHVIEN__MAKHOA__267ABA7A" Association="Self.FK__SINHVIEN__MAKHOA__267ABA7A">
+      <End Role="KHOA" EntitySet="KHOA" />
+      <End Role="SINHVIEN" EntitySet="SINHVIEN" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
